@@ -2,16 +2,16 @@
  * @type {import('prettier').Options}
  */
 module.exports = {
-  arrowParens: "avoid",
+  arrowParens: "always",
   bracketSameLine: false,
-  bracketSpacing: false,
+  bracketSpacing: true,
   endOfLine: "lf",
   jsxSingleQuote: false,
   printWidth: 80,
   quoteProps: "consistent",
-  semi: false,
+  semi: true,
   singleQuote: false,
-  tabWidth: 4,
+  tabWidth: 2,
   trailingComma: "all",
   useTabs: false,
 
