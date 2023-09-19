@@ -11,6 +11,7 @@
     "fmt": "prettier --write . --plugin=prettier-plugin-astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^3.0.1",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource/cabin": "^5.0.8",
