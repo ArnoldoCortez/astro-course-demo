@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import drums from "../content/posts/images/drums.jpg";
 import "@fontsource/cabin";
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
 const {
   title,
   description = "A community of music producers and enthusiasts",
-  image = "/images/drums.png",
+  image = drums.src,
 } = Astro.props;
 ---
 
