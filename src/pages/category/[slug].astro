@@ -10,7 +10,7 @@ import PostList from "../../components/PostList.astro";
 const page = Number(Astro.url.searchParams.get("page")) || 1;
 const category = Astro.params.slug ?? "";
 
-const postPerPage = 2;
+const postPerPage = Number(import.meta.env.POSTS_PER_PAGE);
 const start = postPerPage * (page - 1);
 const end = start + postPerPage;
 
