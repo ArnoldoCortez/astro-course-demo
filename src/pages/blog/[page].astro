@@ -8,18 +8,13 @@ import PostList from "../../components/PostList.astro";
 import Pagination from "../../components/Pagination.astro";
 import CategoryList from "../../components/CategoryList.astro";
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const allPosts = await getCollection("posts");
-
-  return paginate(allPosts, { pageSize: 6 });
-}
-
-type Props = {
-  page: Page<CollectionEntry<"posts">>;
-};
-
-const { page } = Astro.props;
-const posts = page.data;
+const page = Number(Astro.params.page) || 1;
+const postPerPage = 6;
+const start = postPerPage * (page - 1);
+const end = start + postPerPage;
+const allPosts = await getCollection("posts");
+const totalNumberOfPosts = allPosts.length;
+const posts = allPosts.slice(start, end);
 const allCategories = posts.flatMap((post) => post.data.categories);
 const categories = Array.from(new Set(allCategories));
 ---
@@ -35,11 +30,19 @@ const categories = Array.from(new Set(allCategories));
     </p>
     <CategoryList categories={categories} title="Tags" />
     <div class="mb-12">
-      <Pagination prevURL={page.url.prev} nextURL={page.url.next} />
+      <Pagination
+        page={page}
+        postPerPage={postPerPage}
+        numberOfPosts={totalNumberOfPosts}
+      />
     </div>
     <PostList posts={posts} />
     <div class="mb-12">
-      <Pagination prevURL={page.url.prev} nextURL={page.url.next} />
+      <Pagination
+        page={page}
+        postPerPage={postPerPage}
+        numberOfPosts={totalNumberOfPosts}
+      />
     </div>
   </Main>
 </Layout>
