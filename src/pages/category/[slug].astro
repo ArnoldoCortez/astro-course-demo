@@ -14,11 +14,11 @@ const postPerPage = 2;
 const start = postPerPage * (page - 1);
 const end = start + postPerPage;
 
-const allPosts = await getCollection("posts");
+const postsByCategory = (await getCollection("posts")).filter((post) =>
+  post.data.categories.includes(category),
+);
 
-const posts = allPosts
-  .filter((post) => post.data.categories.includes(category))
-  .slice(start, end);
+const posts = postsByCategory.slice(start, end);
 
 if (!posts.length) {
   return Astro.redirect("/404");
@@ -41,7 +41,7 @@ if (!posts.length) {
     <div class="mb-12">
       <Pagination
         page={page}
-        numberOfPosts={allPosts.length}
+        numberOfPosts={postsByCategory.length}
         postPerPage={postPerPage}
       />
     </div>
@@ -49,7 +49,7 @@ if (!posts.length) {
     <div class="mb-12">
       <Pagination
         page={page}
-        numberOfPosts={allPosts.length}
+        numberOfPosts={postsByCategory.length}
         postPerPage={postPerPage}
       />
     </div>

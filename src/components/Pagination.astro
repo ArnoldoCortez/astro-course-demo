@@ -15,7 +15,7 @@ const hasNextPosts = numberOfPosts > page * postPerPage;
   {
     hasPreviousPosts ? (
       <a
-        href={`/blog?page=${page - 1}`}
+        href={`?page=${page - 1}`}
         class="bg-teal-900 text-white py-3 px-6 rounded-xl text-xl"
       >
         Previous
@@ -27,7 +27,7 @@ const hasNextPosts = numberOfPosts > page * postPerPage;
   {
     hasNextPosts ? (
       <a
-        href={`/blog?page=${page + 1}`}
+        href={`?page=${page + 1}`}
         class="bg-teal-900 text-white py-3 px-6 rounded-xl text-xl"
       >
         Next
