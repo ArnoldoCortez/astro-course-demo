@@ -3,6 +3,7 @@
 
 interface ImportMetaEnv {
   POSTS_PER_PAGE: string;
+  CLOUDINARY_CLOUD_NAME: string;
 }
 
 interface ImportMeta {

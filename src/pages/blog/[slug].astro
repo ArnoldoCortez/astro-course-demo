@@ -7,6 +7,7 @@ import H1 from "../../components/H1.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 import Share from "../../components/Share.astro";
 import PostMeta from "../../components/PostMeta.astro";
+import { getThumbnail } from "../../cloudinary";
 
 const { slug } = Astro.params;
 const post = await getEntryBySlug("posts", slug ?? "");
@@ -20,7 +21,7 @@ const { Content, headings } = await post.render();
 
 <Layout
   title={post.data.title}
-  image={post.data.image.src}
+  image={getThumbnail(post.data.title)}
   description={post.data.description}
 >
   <Main>
