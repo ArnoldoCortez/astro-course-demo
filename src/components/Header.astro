@@ -1,6 +1,4 @@
 ---
-import heartbeat from "../content/posts/images/heartbeat.png";
-
 const userEmail = Astro.cookies.get("userEmail");
 ---
 
@@ -9,7 +7,7 @@ const userEmail = Astro.cookies.get("userEmail");
 >
   <a href="/" class="flex items-center gap-x-4">
     <img
-      src={heartbeat.src}
+      src="/images/heartbeat.png"
       alt="rhythm nation logo"
       width={60}
       height={60}
