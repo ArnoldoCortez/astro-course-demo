@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { getEntryBySlug, type CollectionEntry } from "astro:content";
 type Props = {
   post: CollectionEntry<"posts">;
@@ -11,7 +10,7 @@ const author = await getEntryBySlug("authors", post.data.author);
 
 <article>
   <a href={`/blog/${post.slug}`}>
-    <Image
+    <img
       src={post.data.image}
       alt={post.data.title}
       width={600}

@@ -3,7 +3,7 @@ author: pam-beesely
 categories: ["insights"]
 date: 08/10/2021
 featured: false
-image: ./images/speaker.jpg
+image: /images/speaker.jpg
 title: The importance of audio quality
 description: Massa id neque aliquam vestibulum morbi blandit cursus risus at.
 ---
