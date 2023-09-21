@@ -26,6 +26,9 @@ dependencies:
   '@types/sanitize-html':
     specifier: ^2.9.0
     version: 2.9.0
+  '@xata.io/client':
+    specifier: ^0.26.5
+    version: 0.26.5(typescript@5.2.2)
   astro:
     specifier: ^3.1.0
     version: 3.1.0
@@ -994,6 +997,14 @@ packages:
 
   /@types/unist@3.0.0:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
+    dev: false
+
+  /@xata.io/client@0.26.5(typescript@5.2.2):
+    resolution: {integrity: sha512-zaLxm6oL7aQ2A9xZLqTA6QxH/wNyaa/jsV1GUAv/8jcvPOtL181n6u4pPt/s1DidJeju9E8lcw227bCVzS3TZA==}
+    peerDependencies:
+      typescript: '>=4.5'
+    dependencies:
+      typescript: 5.2.2
     dev: false
 
   /acorn@8.10.0:
@@ -3654,6 +3665,12 @@ packages:
   /type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
+    dev: false
+
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
+    hasBin: true
     dev: false
 
   /uc.micro@1.0.6:

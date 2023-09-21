@@ -1,0 +1,18 @@
+{
+  "id": "mig_ck5o5tvv9oe124jeg7mg",
+  "parentID": "mig_ck5o5j4j4det0l1me7s0",
+  "checksum": "1:096f263bcf70ae67f0815cb7bcb9ff46907cb5886ca2f8d3316a32ca603ed392",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "post",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": ""
+        },
+        "table": "comments"
+      }
+    }
+  ]
+}

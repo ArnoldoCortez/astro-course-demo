@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Arnoldo-Cortez-s-workspace-38j0d4.us-east-1.xata.sh/db/astro-course-demo",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
