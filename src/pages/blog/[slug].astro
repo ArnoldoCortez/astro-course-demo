@@ -9,9 +9,28 @@ import Share from "../../components/Share.astro";
 import PostMeta from "../../components/PostMeta.astro";
 import { getThumbnail } from "../../cloudinary";
 import CommentForm from "../../components/CommentForm.astro";
+import { XataClient } from "../../xata";
 
 const { slug } = Astro.params;
 const post = await getEntryBySlug("posts", slug ?? "");
+
+if (Astro.request.method === "POST") {
+  const user = Astro.cookies.get("userId");
+
+  if (!user?.value) {
+    return Astro.redirect("/login");
+  }
+
+  const xata = new XataClient({ apiKey: import.meta.env.XATA_API_KEY });
+  const data = await Astro.request.formData();
+  const comment = data.get("comment") as string;
+
+  await xata.db.comments.create({
+    post: slug,
+    text: comment,
+    user: user.value,
+  });
+}
 
 if (!post) {
   return Astro.redirect("/404");
